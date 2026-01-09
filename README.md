@@ -1,6 +1,4 @@
-Here is a clean, standard README.md file designed for a GitHub repository. It balances technical detail with readability.
-
-ELDQM: Emergency Leakage and Dispersion Selection Model
+**ELDQM: Emergency Leakage and Dispersion Selection Model**
 ELDQM is an atmospheric dispersion modeling framework designed to simulate the transport and spread of hazardous chemical releases. It provides a transparent, computationally efficient environment for emergency response analysis, sensitivity studies, and comparative evaluation against established tools like ALOHA.
 
 🌟 Key Features

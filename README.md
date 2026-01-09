@@ -23,36 +23,3 @@ Continuous Release: Modeled as a steady-state vapor plume from ground-level or p
 
 Neutral Background: Zero initial concentration of the hazardous substance in the environment.
 
-🛠 Installation
-Bash
-
-# Clone the repository
-git clone https://github.com/yourlink/eldqm.git
-
-# Enter the directory
-cd eldqm
-
-# Install requirements
-pip install -r requirements.txt
-📋 Quick Start
-Python
-
-from eldqm import Model
-
-# Initialize model (Wind: 3m/s, Stability: Class C)
-model = Model(wind_speed=3.0, stability='C')
-
-# Define a 100 g/s chlorine release
-model.run_simulation(source_rate=100, substance='Chlorine')
-
-# View results
-model.show_hazard_zones()
-🗺 Roadmap
-GIS Integration: Overlapping hazard plumes with real-world maps and population data.
-
-Transient Modeling: Development of "Puff" models for instantaneous releases.
-
-Urban Effects: Integration of building downwash and obstacle algorithms.
-
-⚖️ License
-This project is released under an open-source license for academic and research use.

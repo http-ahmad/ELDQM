@@ -1,69 +1,60 @@
-ELDQM
+Here is a clean, standard README.md file designed for a GitHub repository. It balances technical detail with readability.
 
-Emergency Leakage and Dispersion Selection Model
+ELDQM: Emergency Leakage and Dispersion Selection Model
+ELDQM is an atmospheric dispersion modeling framework designed to simulate the transport and spread of hazardous chemical releases. It provides a transparent, computationally efficient environment for emergency response analysis, sensitivity studies, and comparative evaluation against established tools like ALOHA.
 
-Overview
+🌟 Key Features
+Gaussian Dispersion: Standard plume formulation for steady-state analysis.
 
-ELDQM is an atmospheric dispersion modeling framework developed to simulate the transport and spread of hazardous chemical releases resulting from accidental leakages in industrial and urban environments. The model is intended for emergency response analysis, sensitivity and robustness studies, and comparative evaluation against established dispersion tools under controlled and reproducible conditions.
+Health Hazard Mapping: Integrated AEGL-1, -2, and -3 threshold zoning.
 
-The framework focuses on transparency, computational efficiency, and scientific consistency, making it suitable for academic research, teaching, and preliminary risk assessment applications.
+Atmospheric Stability: Full support for Pasquill–Gifford (A–F) classifications.
 
-Key Features
+Performance Metrics: Built-in validation tools including RMSE, Mean Bias (MB), Fractional Bias (FB), and Index of Agreement (IOA).
 
-Simulation of continuous vapor releases from ground-level point sources
+Adaptive Resolution: Optimized spatial grids to ensure high accuracy near the source without sacrificing performance.
 
-Support for both single-source and multi-source release scenarios
+🔬 Model Assumptions
+To ensure computational efficiency for screening-level assessments, the model assumes:
 
-Gaussian-based dispersion formulation
+Flat Terrain: No complex topography or building-induced wake effects.
 
-Pasquill–Gifford atmospheric stability classification (A–F)
+Steady State: Constant meteorological conditions during the simulation.
 
-Health-based hazard zoning using AEGL-1, AEGL-2, and AEGL-3 thresholds
+Continuous Release: Modeled as a steady-state vapor plume from ground-level or point sources.
 
-Quantitative performance metrics: RMSE, Mean Bias (MB), Fractional Bias (FB), and Index of Agreement (IOA)
+Neutral Background: Zero initial concentration of the hazardous substance in the environment.
 
-Adaptive spatial resolution to optimize runtime while preserving near-field accuracy
+🛠 Installation
+Bash
 
-Designed for direct comparison with reference models such as ALOHA
+# Clone the repository
+git clone https://github.com/yourlink/eldqm.git
 
-Model Assumptions
+# Enter the directory
+cd eldqm
 
-Flat terrain with no complex topographic or building wake effects
+# Install requirements
+pip install -r requirements.txt
+📋 Quick Start
+Python
 
-Neutral background concentration
+from eldqm import Model
 
-Steady-state meteorological conditions during each simulation
+# Initialize model (Wind: 3m/s, Stability: Class C)
+model = Model(wind_speed=3.0, stability='C')
 
-Continuous release unless otherwise specified
+# Define a 100 g/s chlorine release
+model.run_simulation(source_rate=100, substance='Chlorine')
 
-Applications
+# View results
+model.show_hazard_zones()
+🗺 Roadmap
+GIS Integration: Overlapping hazard plumes with real-world maps and population data.
 
-Emergency preparedness and response planning
+Transient Modeling: Development of "Puff" models for instantaneous releases.
 
-Sensitivity and robustness analysis of dispersion behavior
+Urban Effects: Integration of building downwash and obstacle algorithms.
 
-Educational demonstrations of atmospheric dispersion principles
-
-Comparative benchmarking of dispersion models
-
-Limitations
-
-Does not currently account for complex terrain or building-induced flow effects
-
-Chemical transformation and deposition processes are not included
-
-Intended for screening-level and research use, not regulatory compliance
-
-Future Work
-
-Integration of complex terrain and building effects
-
-Extension to transient puff-based modeling
-
-GIS-based population exposure assessment
-
-Enhanced visualization and reporting capabilities
-
-License
-
+⚖️ License
 This project is released under an open-source license for academic and research use.
